@@ -1,22 +1,25 @@
 let character = document.querySelector(".character")
 
 let jump = 300
-let move = 1
+let moveToLeft = 150
+let moveToRight=150
+let movement = 1
 
 document.body.addEventListener('keydown', (e)=>{
 
     console.log(e.key); 
 if(e.key==="ArrowLeft"){
-    move+=50       
-    character.style.translate= `-${move}px`
-    console.log("AD", move);
+        movement = movement-moveToLeft
+    console.log("AeD", movement);
+character.style.translate= `${movement}px`
+
   }
   if(e.key==="ArrowRight"){
-    move-=50       
-    character.style.translate= `${move}px`
-    console.log("AD", move);
-  }
+    movement = movement+moveToRight
+    console.log("AeD", movement);
+character.style.translate= `${movement}px`
 
+  }
     if(e.key ===" "){
         character.style.transform.translateY = `-${jump}px`
     }
@@ -25,15 +28,16 @@ if(e.key==="ArrowLeft"){
 
 
 document.body.addEventListener('keypress', (e)=>{
-    if(e.key==="ArrowLeft"){
-        move+=50       
-        character.style.translate= `${move}px`
-        console.log("AD", move);
-      }
-      if(e.key==="ArrowRight"){
-        move-=50      
-        character.style.translate= `${move}px`
-      }
+   
+//   if(e.key==="ArrowRight"){
+//     movement = movement+moveToRight
+
+//     console.log("AD", movement);
+//   }
+//       if(e.key==="ArrowLeft"){
+//         movement = movement-moveToLeft
+//     console.log("AD", movement);
+//   }
     if(e.key===' '){
         jump+=200
 
@@ -51,4 +55,5 @@ document.body.addEventListener('keyup', (e)=>{
            }, 600);
     }
 })
+
 
