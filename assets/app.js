@@ -18,26 +18,12 @@ character.style.translate= `${movement}px`
     movement = movement+moveToRight
     console.log("AeD", movement);
 character.style.translate= `${movement}px`
-
   }
-    if(e.key ===" "){
-        character.style.transform.translateY = `-${jump}px`
-    }
-   
 })
 
 
 document.body.addEventListener('keypress', (e)=>{
-   
-//   if(e.key==="ArrowRight"){
-//     movement = movement+moveToRight
 
-//     console.log("AD", movement);
-//   }
-//       if(e.key==="ArrowLeft"){
-//         movement = movement-moveToLeft
-//     console.log("AD", movement);
-//   }
     if(e.key===' '){
         jump+=200
 
