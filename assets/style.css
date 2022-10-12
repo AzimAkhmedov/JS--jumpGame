@@ -1,0 +1,21 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.character {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    transition: 0.4s ease-in;
+}
+
+body{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    width: 100%;
+    height: 100vh;
+}
