@@ -1,6 +1,6 @@
 let character = document.querySelector(".character")
 
-let jump = 300
+let jump = 150
 let moveToLeft = 150
 let moveToRight=150
 let movement = 1
@@ -25,10 +25,11 @@ character.style.translate= `${movement}px`
 document.body.addEventListener('keypress', (e)=>{
 
     if(e.key===' '){
-        jump+=200
 
         console.log(jump);      
         character.style.transform = `translateY(-${jump}px)`
+        jump*=2
+
     }
     
 if(e.key==="ArrowLeft"){
@@ -49,7 +50,7 @@ document.body.addEventListener('keyup', (e)=>{
     if(e.key===' '){
         setTimeout(() => {
             character.style.transform = `translateY(-${0}px)` 
-            jump=300
+            jump=150
            }, 600);
     }
 })
