@@ -108,12 +108,24 @@ document.addEventListener('DOMContentLoaded', ()=>{
             })
            }
     }
+    const fall=()=>{
+        clearInterval(upTimerId)
+        downTimeId =    setInterval(()=>{
+            doodlerBottomSpace -=5
+            doodler.style.bottom = doodlerBottomSpace + 'px'
+        },30)
+    }
     const jump =()=>{
+        clearInterval(downTimeId)
         upTimerId = setInterval(()=>{
            doodlerBottomSpace +=20
            doodler.style.bottom = doodlerBottomSpace+'px'
         },30)
+        if(doodlerBottomSpace <350){
+            fall()
+        }
     }
+
    const start =()=>{
     if(!isGameOver) {
         createDoodler()
