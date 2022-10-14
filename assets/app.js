@@ -57,13 +57,12 @@
 
 
 
-
-
 document.addEventListener('DOMContentLoaded', ()=>{
     const grid = document.querySelector('.grid')
     const doodler = document.createElement('div')
     let isGameOver = false
     let platformCount = 5
+    let platforms =[]
 
     let doodlerLeftSpace = 50
     let doodlerBottomSpace = 150
@@ -89,20 +88,30 @@ document.addEventListener('DOMContentLoaded', ()=>{
         }
      }
     const createPlatforms =()=>{
-        for(let i =0; i<platformCount;i++){
+        for(let i =0; i<=platformCount;i++){
             let platformGap = 600/platformCount
             let newPlatButton = 100 + i * platformGap
             let newPlatform = new Platform(newPlatButton) 
-
+            platforms.push(newPlatform)
         }
+    }
+
+    const movePlatforms = ()=> {
+           if(doodlerBottomSpace> 200){
+            platforms.forEach(platform =>{
+                platform.bottom -=4
+                let visual = platform.visual
+                visual.style.bottom = platform.bottom + "px"
+
+            })
+           }
     }
    const start =()=>{
     if(!isGameOver) {
         createDoodler()
         createPlatforms()
-    }
-
-   }
+        setInterval(movePlatforms,30)
+    }}
 
     start()
 })
