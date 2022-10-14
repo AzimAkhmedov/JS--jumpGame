@@ -63,6 +63,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
     let isGameOver = false
     let platformCount = 5
     let platforms =[]
+    let upTimerId
+    let downTimeId
 
     let doodlerLeftSpace = 50
     let doodlerBottomSpace = 150
@@ -106,11 +108,18 @@ document.addEventListener('DOMContentLoaded', ()=>{
             })
            }
     }
+    const jump =()=>{
+        upTimerId = setInterval(()=>{
+           doodlerBottomSpace +=20
+           doodler.style.bottom = doodlerBottomSpace+'px'
+        },30)
+    }
    const start =()=>{
     if(!isGameOver) {
         createDoodler()
         createPlatforms()
         setInterval(movePlatforms,30)
+        jump()
     }}
 
     start()
