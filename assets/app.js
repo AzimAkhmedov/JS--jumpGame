@@ -57,7 +57,7 @@
 
 
 
-document.addEventListener('DOMContentLoaded', ()=>{
+document.addEventListener('DOMContentLoaded', (e)=>{
     const grid = document.querySelector('.grid')
     const doodler = document.createElement('div')
     let isGameOver = false
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             fall()
         }
     }
-
+    
    const start =()=>{
     if(!isGameOver) {
         createDoodler()
@@ -136,3 +136,5 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     start()
 })
+
+doodler.addEventListener('keypress')
