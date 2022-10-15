@@ -149,4 +149,3 @@ document.addEventListener('DOMContentLoaded', (e)=>{
     start()
 })
 
-doodler.addEventListener('keypress')
