@@ -108,11 +108,23 @@ document.addEventListener('DOMContentLoaded', (e)=>{
             })
            }
     }
+
+    const gameOver=()=>{
+        console.log('over');
+        isGameOver= true
+        clearInterval(upTimerId)
+        clearInterval(downTimeId)
+        
+
+    }
     const fall=()=>{
         clearInterval(upTimerId)
         downTimeId =    setInterval(()=>{
             doodlerBottomSpace -=5
             doodler.style.bottom = doodlerBottomSpace + 'px'
+            if(doodlerBottomSpace<=0){
+                isGameOver()
+            }
         },30)
     }
     const jump =()=>{
