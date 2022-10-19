@@ -142,12 +142,15 @@ document.addEventListener('DOMContentLoaded', (e)=>{
     function control(){
         if(e.key === "ArrowLeft"){
             // 
+           doodlerLeftSpace += 1
+            
         }
         else if(e.key === "ArrowRight"){
-            //
+           doodlerLeftSpace -= 1
+           //
         }  else if((e.key === "ArrowUp") || (e.key === " ")){
             
-            //
+            
         }
     }
     
@@ -161,4 +164,5 @@ document.addEventListener('DOMContentLoaded', (e)=>{
 
     start()
 })
+
 
